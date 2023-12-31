@@ -23,3 +23,16 @@ struct ControlPointsView: View {
         Circle()
             .fill(selectedPointsIDs.contains(id) ? .red : .blue)
             .frame(width: 25)
+            .overlay {
+                Circle()
+                    .strokeBorder(Color(uiColor: .systemGray2), lineWidth: 3)
+            }
+    }
+        
+}
+
+struct ControlPointsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ControlPointsView(
+            selectedPointsIDs: ["2"],
+            controlPoints: [
